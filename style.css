@@ -1,76 +1,133 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;500&display=swap');
 
 body {
-    min-height: 100vh;
-    background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
-    overflow-x: hidden;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url("566320364_4152089008438562_4618960156173392356_n.jpg") no-repeat center center/cover;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: #fff;
+  position: relative;
 }
 
-.stars {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
+body::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+  z-index: 0;
 }
 
-.star {
-    position: absolute;
-    background: white;
-    border-radius: 50%;
-    animation: twinkle 5s infinite alternate;
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  margin: auto;
+  text-align: center;
+  padding: 60px 20px;
+  animation: fadeIn 2s ease-in-out;
 }
 
-@keyframes twinkle {
-    0% { opacity: 0.3; }
-    100% { opacity: 1; }
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+  color: #ffb6c1;
 }
 
-.shooting-star {
-    position: absolute;
-    width: 120px;
-    height: 2px;
-    background: linear-gradient(90deg, rgba(255,255,255,1), rgba(255,255,255,0));
-    transform: rotate(-45deg);
-    animation: shoot 5s linear infinite;
-    opacity: 0;
+p.subtitle {
+  font-size: 1.3rem;
+  color: #f5e6ea;
+  margin-bottom: 2em;
 }
 
-@keyframes shoot {
-    0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
-    100% { transform: translateX(100vw) translateY(-100vh) rotate(-45deg); opacity: 0; }
+.card {
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 15px;
+  padding: 25px;
+  margin: 20px 0;
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
 }
 
-.timer-panel {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 20px 0;
-    padding: 25px;
-    border-radius: 15px;
-    background-color: rgba(15, 15, 35, 0.7);
-    backdrop-filter: blur(5px);
-    box-shadow: 0 0 20px rgba(0, 0, 100, 0.5);
-    border: 1px solid rgba(100, 100, 255, 0.2);
-    width: 350px;
+.card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 15px rgba(255, 182, 193, 0.3);
 }
 
-.timer-display {
-    font-size: 42px;
-    font-weight: bold;
-    margin: 15px 0;
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(100, 150, 255, 0.7);
-    letter-spacing: 2px;
+.card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: #ffb6c1;
+}
+
+.card p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+  color: #fdf2f4;
+}
+
+button {
+  background: #ff7fa2;
+  border: none;
+  color: white;
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.2rem;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: #ff5e89;
+  transform: scale(1.05);
+}
+
+.message {
+  display: none;
+  margin-top: 30px;
+  font-size: 1.3rem;
+  color: #ffb6c1;
+  font-weight: 500;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.heart {
+  position: fixed;
+  width: 12px;
+  height: 12px;
+  background-color: #ffadc6;
+  transform: rotate(45deg);
+  animation: float 6s linear infinite;
+  opacity: 0.6;
+  z-index: 1;
+}
+
+.heart::before, .heart::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background-color: #ffadc6;
+  border-radius: 50%;
+}
+.heart::before { top: -6px; left: 0; }
+.heart::after { left: 6px; top: 0; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@keyframes float {
+  0% { transform: translateY(100vh) rotate(45deg); opacity: 1; }
+  100% { transform: translateY(-10vh) rotate(45deg); opacity: 0; }
 }
