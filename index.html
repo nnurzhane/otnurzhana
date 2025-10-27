@@ -1,27 +1,56 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-    <title>justify</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Опрос</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="stars" id="stars"></div>
-    <div class="shooting-star" style="top: 20%; left: -100px; animation-delay: 0s;"></div>
-    <div class="shooting-star" style="top: 40%; left: -100px; animation-delay: 2s;"></div>
-    <div class="shooting-star" style="top: 60%; left: -100px; animation-delay: 4s;"></div>
+   
+  <audio autoplay loop>
+    <source src="M'Dee - Нужна.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
 
-    <!-- Обратный таймер -->
-    <div class="timer-panel">
-        <div class="timer-display" id="timerCountdown">60д 00:00:00</div>
+  <div class="container">
+    <h1>Особенное приглашение </h1>
+    <p class="subtitle">Для особенного человека</p>
+
+    <div class="card">
+      <h3>📍 Место встречи</h3>
+      <p>
+        <a href="https://2gis.kz/astana/geo/70000001084483194" target="_blank">
+          Кофейня “Coffee Hub”
+        </a>
+      </p>
+      <p>или</p>
+      <p>
+        <a href="https://2gis.kz/astana/geo/70000001037610557" target="_blank">
+          Кинорум "JJ-Room"
+        </a>
+      </p>
     </div>
 
-    <!-- Панель с текстом -->
-    <div class="timer-panel">
-        <div style="font-size: 20px; text-align: center; line-height: 1.6;">
-            Незнаю интересно ли тебе или нет , но может если будешь ждать то вот примерное время , когда сдам оба экзамена и полечу к тебе . Сделал сам✌️
-        </div>
+    <div class="card">
+      <h3>🕒 Время встречи</h3>
+      <p>Понедельник, 27 октября</p>
+      <p>18:00</p>
     </div>
 
-    <script src="script.js"></script>
+    <div class="card">
+      <h3>Дресс-код</h3>
+      <p>Маленькое признание</p>
+      <p>Тебе все идет, ты можешь надеть что угодно, а я всё равно буду восхищаться</p>
+    </div>
+
+    <button onclick="rsvp()">
+      <a href="https://wa.me/7712585031" target="_blank">Напишу ответ сюда</a>
+    </button>
+
+    <p id="msg" class="message">Спасибо за ответ!</p>
+  </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
